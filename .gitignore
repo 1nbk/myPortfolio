@@ -45,6 +45,9 @@ jspm_packages/
 
 # dotenv environment variables file
 .env
+.env.local
+.env.production
+.env.staging
 
 # IDE files
 .vscode/
@@ -67,4 +70,21 @@ logs
 
 # Temporary files
 tmp/
-temp/ 
+temp/
+
+# Security - Sensitive files
+config.json
+secrets.json
+credentials.json
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Template files (for security)
+contact.template.html 
