@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+  <title>Skills | Nathaniel_Bubune</title>
+  <style>
+    .skills-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .skill-card {
+      background-color: #fff;
+      border: 2px solid rgb(109, 67, 0);
+      border-radius: 12px;
+      width: 180px;
+      padding: 1.2rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill-card i {
+      font-size: 2rem;
+      color: rgb(109, 67, 0);
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      .skill-card {
+        width: 140px;
+        padding: 1rem;
+      }
+
+      .skill-card h3 {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo" data-aos="zoom-in">Nathaniel_Bubune</div>
+      <div class="links">
+        <div class="link"><a href="index.html">Home</a></div>
+        <div class="link"><a href="about.html">About</a></div>
+        <div class="link"><a href="skills.html">Skills</a></div>
+        <div class="link"><a href="services.html">Services</a></div>
+        <div class="link"><a href="blogs.html">Blogs</a></div>
+        <div class="link contact-btn"><a href="contact.html">Contact Us</a></div>
+      </div>
+      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    </div>
+    <div class="dropdown">
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="services.html">Services</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact Us</a>
+        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Skills Section -->
+  <section>
+    <div class="skills-container">
+      <h1 data-aos="fade-down" data-aos-duration="1000" style="text-align:center;">My Skills</h1>
+      <div class="skills-grid">
+        <!-- Auto-rendered skills -->
+        <!-- You can update icons here if needed -->
+        <!-- Sample icons chosen for visual clarity -->
+        <div class="skill-card" data-aos="fade-up"><i class="fa-solid fa-code"></i><h3>Programming Languages</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="50"><i class="fa-solid fa-laptop-code"></i><h3>Software Development</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-lightbulb"></i><h3>Problem Solving</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="150"><i class="fa-solid fa-chart-line"></i><h3>Data Analysis</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="200"><i class="fa-brands fa-aws"></i><h3>Cloud Computing</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="250"><i class="fa-solid fa-comments"></i><h3>Communication</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="300"><i class="fa-solid fa-shield-halved"></i><h3>Cybersecurity</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="350"><i class="fa-solid fa-tree"></i><h3>Data Structures</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="400"><i class="fa-solid fa-robot"></i><h3>Machine Learning</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="450"><i class="fa-solid fa-network-wired"></i><h3>Computer Networks</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="500"><i class="fa-solid fa-briefcase"></i><h3>Management</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="550"><i class="fa-solid fa-brain"></i><h3>Artificial Intelligence</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="600"><i class="fa-solid fa-layer-group"></i><h3>Design Patterns</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="650"><i class="fa-solid fa-people-group"></i><h3>Teamwork</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="700"><i class="fa-solid fa-clock"></i><h3>Time Management</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="750"><i class="fa-solid fa-terminal"></i><h3>Unix Commands</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="800"><i class="fa-solid fa-handshake"></i><h3>Communication & Collaboration</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="850"><i class="fa-solid fa-paintbrush"></i><h3>Creativity</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="900"><i class="fa-solid fa-globe"></i><h3>Web Development</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="950"><i class="fa-solid fa-person-circle-question"></i><h3>Adaptability</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="1000"><i class="fa-solid fa-eye"></i><h3>Attention to Detail</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="1050"><i class="fa-solid fa-repeat"></i><h3>DevOps</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="1100"><i class="fa-solid fa-lock"></i><h3>Security</h3></div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="1150"><i class="fa-brands fa-bitcoin"></i><h3>Blockchain Technology</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init({ offset: 0 });</script>
+  <script>
+    function hamburg() {
+      document.querySelector(".dropdown").style.transform = "translateY(0px)";
+    }
+    function cancel() {
+      document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+    }
+  </script>
+</body>
+</html>
