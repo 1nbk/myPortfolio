@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+  <title>Contact | Nathaniel_Bubune</title>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo" data-aos="zoom-in">Nathaniel_Bubune</div>
+      <div class="links">
+        <div class="link"><a href="index.html">Home</a></div>
+        <div class="link"><a href="about.html">About</a></div>
+        <div class="link"><a href="skills.html">Skills</a></div>
+        <div class="link"><a href="services.html">Services</a></div>
+        <div class="link"><a href="blogs.html">Blogs</a></div>
+        <div class="link contact-btn"><a href="contact.html">Contact Us</a></div>
+      </div>
+      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    </div>
+    <div class="dropdown">
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="services.html">Services</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact Us</a>
+        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <section>
+    <div class="main-container" style="flex-direction: column; align-items: center; text-align: center;">
+      <h1 data-aos="fade-down" style="font-size: 3rem; margin-bottom: 1rem;">Let's Get In Touch</h1>
+      <p data-aos="fade-up" style="max-width: 600px; margin: 1rem 0 2rem 0; font-size: 1.1rem; color: #cccccc;">
+        Have a question, proposal, or just want to say hello? Fill the form below and I'll get back to you as soon as possible.
+      </p>
+
+      <form id="contactForm" class="contact-form" data-aos="zoom-in-up" style="width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem;">
+        <div style="background: rgba(40, 167, 69, 0.1); border: 1px solid rgba(40, 167, 69, 0.3); padding: 0.75rem; border-radius: 8px; text-align: center; color: #155724; font-size: 0.9rem;">
+          <i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>
+          Formspree Active: Contact form is ready to send real emails to your inbox!
+        </div>
+        <input type="text" name="name" id="name" placeholder="Your Full Name" required />
+        <input type="email" name="email" id="email" placeholder="Your Email Address" required />
+        <textarea name="message" id="message" rows="6" placeholder="Write your message here..." required></textarea>
+        <button type="submit" id="submitBtn" style="background: rgb(109, 67, 0); color: white; border: none; padding: 1rem; font-size: 1.1rem; font-weight: 600; border-radius: 30px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(109, 67, 0, 0.3);">
+          <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>Send Message
+        </button>
+      </form>
+      
+      <div id="messageStatus" style="margin-top: 1.5rem; padding: 1rem; border-radius: 10px; display: none; font-weight: 500;"></div>
+      
+      <!-- Contact Info -->
+      <div class="contact-info" data-aos="fade-up" data-aos-delay="300" style="margin-top: 3rem; display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; padding: 1rem; background: rgba(255, 255, 255, 0.8); border-radius: 10px; border: 1px solid rgba(109, 67, 0, 0.2);">
+          <i class="fas fa-envelope" style="color: rgb(109, 67, 0); font-size: 1.2rem;"></i>
+          <span>your.email@example.com</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; padding: 1rem; background: rgba(255, 255, 255, 0.8); border-radius: 10px; border: 1px solid rgba(109, 67, 0, 0.2);">
+          <i class="fas fa-phone" style="color: rgb(109, 67, 0); font-size: 1.2rem;"></i>
+          <span>+123 456 7890</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; padding: 1rem; background: rgba(255, 255, 255, 0.8); border-radius: 10px; border: 1px solid rgba(109, 67, 0, 0.2);">
+          <i class="fas fa-map-marker-alt" style="color: rgb(109, 67, 0); font-size: 1.2rem;"></i>
+          <span>Your Location</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init({offset: 0});</script>
+  <script>
+    function hamburg() {
+      document.querySelector(".dropdown").style.transform = "translateY(0px)";
+    }
+    function cancel() {
+      document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+    }
+
+    // Contact form handling
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const messageStatus = document.getElementById('messageStatus');
+      
+      // Get form data
+      const formData = new FormData();
+      formData.append('name', document.getElementById('name').value);
+      formData.append('email', document.getElementById('email').value);
+      formData.append('message', document.getElementById('message').value);
+      
+      // Disable submit button and show loading
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Sending...';
+      messageStatus.style.display = 'none';
+      
+      try {
+        // Formspree endpoint configured - ready to send emails
+        const response = await fetch('https://formspree.io/f/xqabwooy', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          messageStatus.style.display = 'block';
+          messageStatus.style.backgroundColor = 'rgba(40, 167, 69, 0.2)';
+          messageStatus.style.color = '#28a745';
+          messageStatus.style.border = '1px solid rgba(40, 167, 69, 0.3)';
+          messageStatus.innerHTML = '<i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>Message sent successfully! I\'ll get back to you soon.';
+          
+          // Clear form
+          document.getElementById('contactForm').reset();
+        } else {
+          throw new Error('Failed to send message');
+        }
+      } catch (error) {
+        messageStatus.style.display = 'block';
+        messageStatus.style.backgroundColor = 'rgba(220, 53, 69, 0.2)';
+        messageStatus.style.color = '#dc3545';
+        messageStatus.style.border = '1px solid rgba(220, 53, 69, 0.3)';
+        messageStatus.innerHTML = '<i class="fas fa-exclamation-circle" style="margin-right: 0.5rem;"></i>Something went wrong. Please try again.';
+      } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>Send Message';
+      }
+    });
+  </script>
+</body>
+</html>

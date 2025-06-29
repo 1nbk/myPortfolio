@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+  <title>Services | Nathaniel_Bubune</title>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo" data-aos="zoom-in">Nathaniel_Bubune</div>
+      <div class="links">
+        <div class="link"><a href="index.html">Home</a></div>
+        <div class="link"><a href="about.html">About</a></div>
+        <div class="link"><a href="skills.html">Skills</a></div>
+        <div class="link"><a href="services.html">Services</a></div>
+        <div class="link"><a href="blogs.html">Blogs</a></div>
+        <div class="link contact-btn"><a href="contact.html">Contact Us</a></div>
+      </div>
+      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    </div>
+    <div class="dropdown">
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="services.html">Services</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact Us</a>
+        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Services Section -->
+  <section>
+    <div class="main-container" style="flex-direction: column; text-align: center;">
+      <h1 data-aos="fade-down" data-aos-duration="1000">My Services</h1>
+      <div class="services-grid" style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 2rem; gap: 2rem;">
+        
+        <!-- Each service card -->
+        <div class="service-card" data-aos="fade-up" style="padding: 20px; border: 1px solid rgb(109,67,0); border-radius: 10px; width: 250px;">
+          <i class="fa-solid fa-code" style="font-size: 2rem; color: rgb(109,67,0);"></i>
+          <h3>Web Development</h3>
+          <p>I build responsive and modern websites using HTML, CSS, JavaScript, React, and more.</p>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-solid fa-mobile-screen-button" style="font-size: 2rem; color: rgb(109,67,0);"></i>
+          <h3>Mobile App Development</h3>
+          <p>Designing cross-platform mobile apps using React Native and Expo.</p>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <i class="fa-solid fa-database" style="font-size: 2rem; color: rgb(109,67,0);"></i>
+          <h3>Database Management</h3>
+          <p>Creating and managing PostgreSQL and MySQL databases for scalable applications.</p>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <i class="fa-solid fa-shield-halved" style="font-size: 2rem; color: rgb(109,67,0);"></i>
+          <h3>Cybersecurity</h3>
+          <p>Implementing basic cybersecurity protocols to protect data and infrastructure.</p>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <i class="fa-solid fa-chalkboard-user" style="font-size: 2rem; color: rgb(109,67,0);"></i>
+          <h3>Tech Tutoring</h3>
+          <p>Offering tutoring sessions in coding, computer science fundamentals, and tools like Git.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init({offset: 0});</script>
+  <script>
+    function hamburg() {
+      document.querySelector(".dropdown").style.transform = "translateY(0px)";
+    }
+    function cancel() {
+      document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+    }
+  </script>
+</body>
+</html>

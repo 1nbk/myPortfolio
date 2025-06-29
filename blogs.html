@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+  <title>Blogs | Nathaniel_Bubune</title>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo" data-aos="zoom-in">Nathaniel_Bubune</div>
+      <div class="links">
+        <div class="link"><a href="index.html">Home</a></div>
+        <div class="link"><a href="about.html">About</a></div>
+        <div class="link"><a href="skills.html">Skills</a></div>
+        <div class="link"><a href="services.html">Services</a></div>
+        <div class="link"><a href="blogs.html">Blogs</a></div>
+        <div class="link contact-btn"><a href="contact.html">Contact Us</a></div>
+      </div>
+      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    </div>
+    <div class="dropdown">
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="services.html">Services</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact Us</a>
+        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blogs Section -->
+  <section>
+    <div class="main-container" style="flex-direction: column; text-align: center;">
+      <h1 data-aos="fade-down">Latest Tech Articles</h1>
+      <div class="blogs-grid" style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 2rem; gap: 2rem;">
+
+        <!-- Blog Card 1 -->
+        <div class="blog-card" data-aos="fade-up" style="width: 300px; padding: 20px; border: 1px solid rgb(109,67,0); border-radius: 10px; text-align: left;">
+          <h3>Mastering JavaScript Closures</h3>
+          <p>Understand closures, lexical environments, and real-world use cases.</p>
+          <a href="#" style="color: rgb(109,67,0); text-decoration: underline;">Read More</a>
+        </div>
+
+        <!-- Blog Card 2 -->
+        <div class="blog-card" data-aos="fade-up" data-aos-delay="100" style="width: 300px; padding: 20px; border: 1px solid rgb(109,67,0); border-radius: 10px; text-align: left;">
+          <h3>Top 5 React Native UI Libraries</h3>
+          <p>Speed up mobile development with these efficient and beautiful UI tools.</p>
+          <a href="#" style="color: rgb(109,67,0); text-decoration: underline;">Read More</a>
+        </div>
+
+        <!-- Blog Card 3 -->
+        <div class="blog-card" data-aos="fade-up" data-aos-delay="200" style="width: 300px; padding: 20px; border: 1px solid rgb(109,67,0); border-radius: 10px; text-align: left;">
+          <h3>SQL vs NoSQL: What to Choose?</h3>
+          <p>A developer’s guide to choosing the right database based on use-case.</p>
+          <a href="#" style="color: rgb(109,67,0); text-decoration: underline;">Read More</a>
+        </div>
+
+        <!-- Blog Card 4 -->
+        <div class="blog-card" data-aos="fade-up" data-aos-delay="300" style="width: 300px; padding: 20px; border: 1px solid rgb(109,67,0); border-radius: 10px; text-align: left;">
+          <h3>Git & GitHub for Beginners</h3>
+          <p>Learn how version control can level up your development workflow.</p>
+          <a href="#" style="color: rgb(109,67,0); text-decoration: underline;">Read More</a>
+        </div>
+
+        <!-- Blog Card 5 -->
+        <div class="blog-card" data-aos="fade-up" data-aos-delay="400" style="width: 300px; padding: 20px; border: 1px solid rgb(109,67,0); border-radius: 10px; text-align: left;">
+          <h3>Intro to REST APIs</h3>
+          <p>What are RESTful APIs and how can you build and consume them efficiently?</p>
+          <a href="#" style="color: rgb(109,67,0); text-decoration: underline;">Read More</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init({offset: 0});</script>
+  <script>
+    function hamburg() {
+      document.querySelector(".dropdown").style.transform = "translateY(0px)";
+    }
+    function cancel() {
+      document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Nathaniel Bubune</title>
+
+  <!-- External styles and libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo" data-aos="zoom-in">Nathaniel_Bubune</div>
+      <div class="links">
+        <div class="link"><a href="index.html">Home</a></div>
+        <div class="link"><a href="about.html">About</a></div>
+        <div class="link"><a href="skills.html">Skills</a></div>
+        <div class="link"><a href="services.html">Services</a></div>
+        <div class="link"><a href="blogs.html">Blogs</a></div>
+        <div class="link contact-btn"><a href="contact.html">Contact Us</a></div>
+      </div>
+      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    </div>
+    <div class="dropdown">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="services.html">Services</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="contact.html">Contact Us</a>
+      <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section class="main-container" style="flex-direction: column; text-align: center;">
+    <h1 data-aos="fade-down" data-aos-duration="1000">About Me</h1>
+    <p data-aos="fade-up" data-aos-duration="1000" class="about-text">
+      I'm <strong>Nathaniel Bubune</strong>, a passionate <strong>Computer Science student</strong> with a love for solving real-world problems using technology.
+      My journey in software development is driven by curiosity, creativity, and a hunger to continuously improve.
+    </p>
+    <p data-aos="fade-up" data-aos-duration="1000" class="about-text">
+      I’m a certified <strong>Microsoft Office Specialist (MOS)</strong>, a versatile <strong>Full-Stack Developer</strong>, and a dedicated <strong>Database Administrator</strong>.
+      I write clean, efficient <strong>Object-Oriented Programs</strong> and build scalable backend services, intuitive user interfaces, and responsive applications that users love.
+    </p>
+    <p data-aos="fade-up" data-aos-duration="1000" class="about-text">
+      On top of that, I’m an almost pro-level <strong>Graphic Designer</strong> and a budding expert in <strong>UI/UX Design</strong>.
+      I take pride in transforming complex ideas into elegant digital solutions.
+    </p>
+    <p data-aos="fade-up" data-aos-duration="1000" class="about-text">
+      When I'm not coding, you’ll find me learning new skills, refining my craft, or creating content to share what I’ve learned with the world.
+      I thrive in collaborative environments where ideas turn into impactful solutions.
+    </p>
+
+    <!-- Social Links -->
+    <div class="social-links" data-aos="zoom-in-up" data-aos-delay="300">
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ offset: 0 });
+    function hamburg() {
+      document.querySelector(".dropdown").style.transform = "translateY(0)";
+    }
+    function cancel() {
+      document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+    }
+  </script>
+</body>
+</html>
