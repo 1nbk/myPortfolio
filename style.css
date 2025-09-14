@@ -564,6 +564,122 @@ nav.scrolled {
     background: rgb(139, 90, 0);
 }
 
+/* Professional Splash Screen */
+.professional-splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #ffffff 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.splash-content {
+    text-align: center;
+    max-width: 500px;
+    padding: 2rem;
+}
+
+.splash-logo {
+    margin-bottom: 2rem;
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+.logo-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgb(109, 67, 0), #ffd700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 3px solid rgb(109, 67, 0);
+    transition: all 0.3s ease;
+}
+
+.splash-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+.splash-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(109, 67, 0);
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.splash-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.loading-bar {
+    width: 300px;
+    height: 4px;
+    background: rgba(109, 67, 0, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.loading-progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, rgb(109, 67, 0), #ffd700);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.loading-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+.loading-text {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+@keyframes logoFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
 /* Responsive Enhancements */
 @media (max-width: 768px) {
     .scroll-to-top {
@@ -583,5 +699,22 @@ nav.scrolled {
     .contact-form {
         padding: 1.5rem;
         margin: 0 1rem;
+    }
+    
+    .splash-title {
+        font-size: 2rem;
+    }
+    
+    .logo-circle {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .logo-text {
+        font-size: 2rem;
+    }
+    
+    .loading-bar {
+        width: 250px;
     }
 }

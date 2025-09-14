@@ -9,13 +9,21 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loadingScreen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%); display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.5s ease;">
-        <div style="text-align: center;">
-            <img src="myself.jpeg" alt="Nathaniel Bubune" style="width: 150px; height: 170px; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; object-fit: cover; margin: 0 auto 2rem auto;">
-            <h2 style="color: rgb(109, 67, 0); margin-bottom: 1rem;">Loading Portfolio...</h2>
-            <div style="width: 200px; height: 4px; background: rgba(255, 255, 255, 0.1); border-radius: 2px; overflow: hidden;">
-                <div id="loadingBar" style="width: 0%; height: 100%; background: rgb(109, 67, 0); transition: width 0.3s ease;"></div>
+    <!-- Professional Loading Screen -->
+    <div id="loadingScreen" class="professional-splash">
+        <div class="splash-content">
+            <div class="splash-logo">
+                <div class="logo-circle">
+                    <img src="myself.jpeg" alt="Nathaniel Bubune" class="splash-image">
+                </div>
+            </div>
+            <h1 class="splash-title">Nathaniel Bubune</h1>
+            <p class="splash-subtitle">Computer Science Student & Developer</p>
+            <div class="loading-container">
+                <div class="loading-bar">
+                    <div id="loadingBar" class="loading-progress"></div>
+                </div>
+                <p class="loading-text">Loading Portfolio...</p>
             </div>
         </div>
     </div>
@@ -122,10 +130,14 @@
             const loadingScreen = document.getElementById('loadingScreen');
             const loadingBar = document.getElementById('loadingBar');
             
-            // Simulate loading progress
+            // Simulate loading progress over 8 seconds
             let progress = 0;
+            const totalDuration = 8000; // 8 seconds
+            const updateInterval = 50; // Update every 50ms
+            const progressIncrement = (100 / (totalDuration / updateInterval)) + Math.random() * 2;
+            
             const interval = setInterval(() => {
-                progress += Math.random() * 30;
+                progress += progressIncrement;
                 if (progress > 100) progress = 100;
                 loadingBar.style.width = progress + '%';
                 
@@ -138,10 +150,10 @@
                         }, 500);
                     }, 500);
                 }
-            }, 100);
+            }, updateInterval);
         });
 
-        // Fallback: Hide loading screen after 3 seconds
+        // Fallback: Hide loading screen after 8 seconds
         setTimeout(() => {
             const loadingScreen = document.getElementById('loadingScreen');
             if (loadingScreen && loadingScreen.style.display !== 'none') {
@@ -150,7 +162,7 @@
                     loadingScreen.style.display = 'none';
                 }, 500);
             }
-        }, 3000);
+        }, 8000);
 
         // Particle Background
         function createParticles() {
