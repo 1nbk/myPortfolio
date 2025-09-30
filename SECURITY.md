@@ -68,7 +68,7 @@ portfolio-backend/
 
 ```bash
 # Email Configuration - SECURE: Never commit this file to Git
-EMAIL_USER=gbknathaniel@gmail.com
+EMAIL_USER=your email here
 EMAIL_PASS=YOUR_GMAIL_APP_PASSWORD_HERE
 ```
 
@@ -81,7 +81,7 @@ EMAIL_PASS=YOUR_GMAIL_APP_PASSWORD_HERE
 3. **Regularly update dependencies**
 4. **Monitor for security vulnerabilities**
 5. **Use HTTPS in production**
-6. **Gmail App Passwords**: If using backend email, generate app passwords, not regular passwords
+6. **Gmail App Passwords**: If using backend email, generate app passwords, not regular passwords . This is very important
 
 ## 📞 Contact for Security Issues
 
@@ -91,6 +91,6 @@ If you find any security vulnerabilities, please contact:
 
 ---
 
-**Last Updated**: June 2025
+**Last Updated**: September 30, 2025
 **Security Level**: High
 **Status**: All credentials properly secured 
