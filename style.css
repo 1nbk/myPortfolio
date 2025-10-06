@@ -146,8 +146,8 @@ section{
 .main-container .image::before{
     content: '';
     position: absolute;
-    width: 420px;
-    height: 420px;
+    width: 460px;
+    height: 460px;
     border-radius: 50%;
     background: radial-gradient(closest-side, rgba(255, 221, 130, 0.35), rgba(109, 67, 0, 0.25) 60%, rgba(109, 67, 0, 0) 70%);
     filter: blur(18px);
@@ -157,8 +157,8 @@ section{
 .main-container .image::after{
     content: '';
     position: absolute;
-    width: 380px;
-    height: 380px;
+    width: 420px;
+    height: 420px;
     border-radius: 50%;
     z-index: 0;
     background: conic-gradient(from 0deg, rgba(109,67,0,0.9), #ffd700, rgba(139,90,0,0.9), rgba(109,67,0,0.9));
@@ -167,8 +167,8 @@ section{
     animation: spinRing 12s linear infinite;
 }
 .main-container .image img {
-    width: 340px;       /* slightly enlarged */
-    height: 340px;
+    width: 360px;       /* bigger a little */
+    height: 360px;
     border-radius: 50%; /* makes it circular */
     object-fit: cover;  /* keeps the proportions */
     border: 6px solid transparent;
@@ -286,16 +286,16 @@ section{
         order: -1;
     }
     .main-container .image::before{
-        width: 360px;
-        height: 360px;
+        width: 380px;
+        height: 380px;
     }
     .main-container .image::after{
-        width: 320px;
-        height: 320px;
+        width: 340px;
+        height: 340px;
     }
     .main-container .image img{
-        width: 320px;
-        height: 320px;
+        width: 330px;
+        height: 330px;
     }
 }
 
