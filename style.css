@@ -309,6 +309,74 @@ section{
     to { transform: rotate(360deg); }
 }
 
+/* Hexagon-shaped themed image (skills page) */
+.themed-hex {
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+    border: 6px solid transparent;
+    background: linear-gradient(#ffffff, #ffffff) padding-box,
+               conic-gradient(from 60deg, rgba(109,67,0,0.95), #ffd700, rgba(139,90,0,0.95), rgba(109,67,0,0.95)) border-box;
+    box-shadow: 0 15px 35px rgba(109, 67, 0, 0.25), 0 4px 10px rgba(0,0,0,0.06);
+    transition: transform 0.5s cubic-bezier(.2,.8,.2,1), filter 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.themed-hex:hover {
+    transform: translateY(-6px) scale(1.03);
+    filter: saturate(1.1) contrast(1.05);
+    box-shadow: 0 22px 50px rgba(109, 67, 0, 0.28), 0 6px 16px rgba(0,0,0,0.08);
+}
+
+@media (max-width:884px) {
+    .themed-hex {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Square image with premium effects (skills page) */
+.themed-square {
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+    border: 10px solid transparent;
+    background: linear-gradient(#ffffff, #ffffff) padding-box,
+               conic-gradient(from 45deg, rgba(109,67,0,0.95), #ffd700, rgba(139,90,0,0.95), rgba(109,67,0,0.95)) border-box;
+    box-shadow: 0 16px 36px rgba(109, 67, 0, 0.22), 0 6px 14px rgba(0,0,0,0.06);
+    transition: transform 0.5s cubic-bezier(.2,.8,.2,1), filter 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: block;
+}
+
+.themed-square::after {
+    /* subtle corner accents */
+    content: '';
+    position: absolute;
+    inset: 8px;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(109,67,0,0.12) 0 50%, transparent 50% 100%),
+                linear-gradient(180deg, rgba(109,67,0,0.12) 0 50%, transparent 50% 100%);
+    background-size: 14px 2px, 2px 14px;
+    background-repeat: no-repeat;
+    background-position: left top, right bottom;
+}
+
+.themed-square:hover {
+    transform: translateY(-6px) scale(1.03);
+    filter: saturate(1.08) contrast(1.05);
+    box-shadow: 0 22px 50px rgba(109, 67, 0, 0.28), 0 8px 18px rgba(0,0,0,0.08);
+}
+
+@media (max-width:884px) {
+    .themed-square {
+        width: 300px;
+        height: 300px;
+        border-width: 8px;
+    }
+}
+
 /* Scroll to Top Button */
 .scroll-to-top {
     position: fixed;
@@ -427,6 +495,56 @@ nav.scrolled {
 .enhanced-image:hover {
     transform: scale(1.05) rotate(2deg);
     filter: brightness(1.2) contrast(1.2) saturate(1.2);
+}
+
+/* Themed diamond shape override for images (skills page) */
+.themed-diamond {
+    border-radius: 0;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    border: 6px solid transparent;
+    background: linear-gradient(#ffffff, #ffffff) padding-box,
+               conic-gradient(from 60deg, rgba(109,67,0,0.95), #ffd700, rgba(139,90,0,0.95), rgba(109,67,0,0.95)) border-box;
+    box-shadow: 0 15px 35px rgba(109, 67, 0, 0.22), 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.5s cubic-bezier(.2,.8,.2,1), filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.themed-diamond:hover {
+    transform: translateY(-6px) scale(1.03) rotate(1deg);
+}
+
+/* Dotted circular portrait: image formed by dot grid inside a circle */
+.dotted-image {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(109, 67, 0, 0.25), 0 4px 10px rgba(0,0,0,0.06);
+    /* create dot grid mask */
+    --dot-size: 2.2px;
+    --dot-gap: 9px;
+    -webkit-mask: radial-gradient(circle at center, black 60%, transparent 60.1%) 0 0/var(--dot-gap) var(--dot-gap);
+            mask: radial-gradient(circle at center, black 60%, transparent 60.1%) 0 0/var(--dot-gap) var(--dot-gap);
+}
+
+/* Thematic ring around dotted portrait */
+.dotted-image::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    background: conic-gradient(from 60deg, rgba(109,67,0,0.95), #ffd700, rgba(139,90,0,0.95), rgba(109,67,0,0.95));
+    z-index: -1;
+    filter: blur(0.2px);
+    animation: spinRing 18s linear infinite;
+}
+
+@media (max-width:884px) {
+    .dotted-image {
+        width: 300px;
+        height: 300px;
+    }
 }
 
 .professional-placeholder:hover {
